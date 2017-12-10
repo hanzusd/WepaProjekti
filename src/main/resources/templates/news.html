@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hyviä uutisia</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h2>Tästä tulee niin vitun hieno uutissivu!</h2>
+        <div align = "center">
+            <h3>Lisää uutinen</h3>
+            <form th:action="@{/news}" method="POST">
+              
+                    Otsikko: <input type="text" name="otsikko" id="otsikko"/><br/>
+                    Ingressi: <input type="text" name="ingressi" id="ingressi"/><br/>
+                    Kuva: <input type="file" name="file" id="file"/><br/>
+                    <input type="submit" value="Lisää"/><br/>
+                    Teksti: <textarea name="leipateksti"></textarea><br/>
+
+
+                    <input type="submit"/>   
+            </form>
+        </div>
+    </body>
+
+
+</html>

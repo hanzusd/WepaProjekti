@@ -1,0 +1,5 @@
+wad\controller\DefaultController.class
+wad\controller\UutisController.class
+wad\WepaProjectApplication.class
+wad\domain\Uutinen.class
+wad\repository\UutisRepository.class

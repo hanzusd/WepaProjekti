@@ -1,7 +1,8 @@
 wad\controller\DefaultController.class
-wad\controller\UutisController.class
 wad\domain\Kuva.class
-wad\WepaProjectApplication.class
 wad\domain\Uutinen.class
-wad\repository\UutisRepository.class
 wad\repository\KuvaRepository.class
+wad\controller\KuvaController.class
+wad\controller\UutisController.class
+wad\WepaProjectApplication.class
+wad\repository\UutisRepository.class

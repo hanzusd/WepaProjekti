@@ -6,6 +6,9 @@
     </head>
     <body>
         <h2><span th:text="${news.otsikko}">otsikko</span></h2><br/>
+        <div th:if="${news.kuva != null}">
+                    <img th:src="@{/news/picture/{id}(id=${news.id})}" alt = 'no picture'/>
+                </div>
         <h3><span th:text="${news.ingressi}">ingressi</span></h3><br/>
         <span th:text="${news.leipateksti}">leipäteksti</span>
     </body>

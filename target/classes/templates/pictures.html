@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lisää kuva uutiseen</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h3>Lisää kuva</h3>
+        <form th:action="@{/news/picture}" method="POST" enctype="multipart/form-data">
+            Kuva: <input type="file" name="file" id="file"/><br/>
+            Uutisen otsikko: <input type="text" name="otsikko" id="otsikko"/>
+            <input type="submit"/>
+        </form>
+    </body>
+
+
+</html>

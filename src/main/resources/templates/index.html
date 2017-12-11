@@ -5,20 +5,26 @@
         <meta charset="UTF-8" />
     </head>
     <body>
-    
+
         <h2>Tästä tulee niin vitun hieno uutissivu!</h2>
 
 
-        <div align = "right">
-            <p>
-                <a th:href="@{/news}">Lisää uutinen</a><br/>
-            </p>
-        </div>
+        <table style="width:100%">
+            <tr>
+                <td><h3><a th:href="@{/}">Home</a></h3></td>
+                <td><h3><a th:href="@{/all}">Kaikki uutiset</a></h3> </td>
+                <td><h3><a th:href="@{/news}">Lisää uutinen</a></h3></td><br/>
+                
+            </tr>
+        </table>
 
         <form th:action="@{/news}" method="GET">
 
             <div th:each="u : ${uutine}">
-                <h2><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h2> <br/>
+                <h2><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h2> 
+                <div th:if="${u.kuva != null}">
+                    <img th:src="@{/news/picture/{id}(id=${u.kuva.id})}" alt = 'no picture'/>
+                </div>
                 <h3><a th:text="${u.ingressi}">ingressi</a></h3><br/>
             </div>
 

@@ -5,10 +5,9 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import wad.domain.Kuva;
@@ -24,12 +23,12 @@ public class UutisController {
     @Autowired
     private KuvaRepository kuvaRepository;
     
-    @RequestMapping(value = "/news", method = RequestMethod.GET)
+    @GetMapping("/news")
     public String nesw() {
         return "news";
     }
     
-    @RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
+    @GetMapping("/news/{id}")
     public String yksiUutinen(Model model, @PathVariable Long id) {
         model.addAttribute("news", uutisRepository.findById(id).get());
         return "newspiece";

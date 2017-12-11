@@ -1,5 +1,7 @@
-C:\Users\Hansu\Documents\GitHub\WepaProjekti\WepaProject\src\main\java\wad\controller\UutisController.java
-C:\Users\Hansu\Documents\GitHub\WepaProjekti\WepaProject\src\main\java\wad\repository\UutisRepository.java
-C:\Users\Hansu\Documents\GitHub\WepaProjekti\WepaProject\src\main\java\wad\WepaProjectApplication.java
-C:\Users\Hansu\Documents\GitHub\WepaProjekti\WepaProject\src\main\java\wad\domain\Uutinen.java
-C:\Users\Hansu\Documents\GitHub\WepaProjekti\WepaProject\src\main\java\wad\controller\DefaultController.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\domain\Kuva.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\WepaProjectApplication.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\controller\DefaultController.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\controller\UutisController.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\repository\KuvaRepository.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\repository\UutisRepository.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\domain\Uutinen.java

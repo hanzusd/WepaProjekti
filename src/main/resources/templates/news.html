@@ -9,16 +9,16 @@
         <div align = "center">
             <h3>Lisää uutinen</h3>
             <form th:action="@{/news}" method="POST">
-              
-                    Otsikko: <input type="text" name="otsikko" id="otsikko"/><br/>
-                    Ingressi: <input type="text" name="ingressi" id="ingressi"/><br/>
-                    Kuva: <input type="file" name="file" id="file"/><br/>
-                    <input type="submit" value="Lisää"/><br/>
-                    Teksti: <textarea name="leipateksti"></textarea><br/>
-
-
-                    <input type="submit"/>   
+                Otsikko: <input type="text" name="otsikko" id="otsikko"/><br/>
+                Ingressi: <input type="text" name="ingressi" id="ingressi"/><br/>
+                Teksti: <textarea name="leipateksti"></textarea><br/>
+                <input type="submit"/>   
             </form>
+            <form th:action="@{/news}" method="POST" enctype="multipart/form-data">
+                Kuva: <input type="file" name="file" id="file"/><br/>
+                <input type="submit" value="Lisää"/><br/>
+            </form>
+
         </div>
     </body>
 

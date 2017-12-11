@@ -1,8 +1,11 @@
 
 package wad.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -14,9 +17,33 @@ public class Uutinen extends AbstractPersistable<Long> {
     private Date date;
     @OneToOne
     private Kuva kuva;
+    @ManyToMany
+    private List<Kategoria> kategoriat;
+
+    public List<Kategoria> getKategoriat() {
+        if(this.kategoriat == null) {
+            this.kategoriat = new ArrayList<>(); 
+        }
+        return kategoriat;
+    }
+
+    public void setKategoriat(List<Kategoria> kategoriat) {
+        this.kategoriat = kategoriat;
+    }
+    
+    public void addKategoria(Kategoria kategoria) {
+        if(this.kategoriat == null) {
+            this.kategoriat = new ArrayList<>(); 
+        }
+        this.kategoriat.add(kategoria);
+    }
     
     public Uutinen() {
         this.date = new Date();
+    }
+    
+    public Date getDate() {
+        return date;
     }
 
     public Kuva getKuva() {

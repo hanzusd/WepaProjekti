@@ -6,13 +6,16 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import wad.domain.Kategoria;
+import wad.repository.KategoriaRepository;
 import wad.repository.UutisRepository;
 
 @Controller
 public class DefaultController {
-    
     @Autowired
     private UutisRepository uutisRepository;
+    @Autowired
+    private KategoriaRepository kategoriaRepository;
 
     @GetMapping("/")
     public String list(Model model) {

@@ -12,8 +12,31 @@
                 Otsikko: <input type="text" name="otsikko" id="otsikko"/><br/>
                 Ingressi: <input type="text" name="ingressi" id="ingressi"/><br/>
                 Teksti: <textarea name="leipateksti"></textarea><br/>
+                Kategoriat:<br/>
+
+
+                <input type="checkbox" name="features" id="features" value="ulkomaat" />
+                <label for="ulkomaat">Ulkomaat</label>
+
+                <input type="checkbox" name="features" id="features" value="kotimaa" />
+                <label for="kotimaa">Kotimaa</label>
+                <br/>
+                <input type="checkbox" name="features" id="features" value="tiede" />
+                <label for="tiede">Tiede</label>
+
+                <input type="checkbox" name="features" id="features" value="urheilu" />
+                <label for="urheilu">Urheilu</label>
+                <br/>
+                <input type="checkbox" name="features" id="features" value="kulttuuri" />
+                <label for="kulttuuri">Kulttuuri</label>
+
+                <input type="checkbox" name="features" id="features" value="muu" />
+                <label for="muu">Muu</label>
+                <br/>
                 <input type="submit"/>   
             </form>
+            <br/>
+            <br/>
             <a th:href="@{news/picture}">Lisää kuva</a>
         </div>
     </body>

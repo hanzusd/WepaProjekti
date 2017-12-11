@@ -1,5 +1,7 @@
 C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\domain\Kuva.java
 C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\WepaProjectApplication.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\domain\Kategoria.java
+C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\repository\KategoriaRepository.java
 C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\controller\DefaultController.java
 C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\controller\UutisController.java
 C:\Users\Hansu\Documents\GitHub\WepaProject\src\main\java\wad\repository\KuvaRepository.java

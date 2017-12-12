@@ -1,11 +1,50 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     <head>
+        <style>
+            body {
+                background-color: #C5EEE8;
+            }
+            header {
+                background-color: #61D0BE;
+                text-align: center;
+                padding: 20px;
+            }
+            table {
+                background-color: #87EADB;
+            }
+
+
+
+        </style>
         <title>Hyviä uutisia</title>
         <meta charset="UTF-8" />
     </head>
     <body>
-        <h2>Tästä tulee niin vitun hieno uutissivu!</h2>
+        <header>
+            <h2>Tosi hieno uutissivu!</h2></header>
+        <table style="width:100%">  
+            <tr>
+                <td><a th:href="@{/}">Home</a></td>
+                <td><a th:href="@{/all}">Kaikki uutiset</a> </td>
+                <td><a th:href="@{/news}">Lisää uutinen</a></td><br/>
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td><a th:href="@{/news/kategoria/kotimaa}">Kotimaa</a></td>
+                <td><a th:href="@{/news/kategoria/ulkomaat}">Ulkomaat</a> </td>
+                <td><a th:href="@{/news/kategoria/tiede}">Tiede</a></td><br/>
+                <td><a th:href="@{/news/kategoria/urheilu}">Urheilu</a></td>
+                <td><a th:href="@{/news/kategoria/kulttuuri}">Kulttuuri</a> </td>
+                <td><a th:href="@{/news/kategoria/muu}">Muu</a></td><br/>
+            </tr>
+        </table>
+        <hr/>
         <div align = "center">
             <h3>Lisää uutinen</h3>
             <form th:action="@{/news}" method="POST">
@@ -33,6 +72,10 @@
                 <input type="checkbox" name="features" id="features" value="muu" />
                 <label for="muu">Muu</label>
                 <br/>
+                Kirjoittajat:<br/> 
+                <input type="text" name="kirjoittaja" id="kirjoittaja"/></br>
+                <input type="text" name="kirjoittaja" id="kirjoittaja"/></br>
+                <input type="text" name="kirjoittaja" id="kirjoittaja"/></br>
                 <input type="submit"/>   
             </form>
             <br/>
@@ -40,6 +83,4 @@
             <a th:href="@{news/picture}">Lisää kuva</a>
         </div>
     </body>
-
-
 </html>

@@ -1,4 +1,3 @@
-
 package wad.domain;
 
 import java.util.ArrayList;
@@ -11,18 +10,26 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Uutinen extends AbstractPersistable<Long> {
+
     private String otsikko;
     private String leipateksti;
     private String ingressi;
+    private int luettu;
     private Date date;
     @OneToOne
     private Kuva kuva;
     @ManyToMany
     private List<Kategoria> kategoriat;
+    @ManyToMany
+    private List<Kirjoittaja> kirjoittajat;
+
+    public Uutinen() {
+        this.date = new Date();
+    }
 
     public List<Kategoria> getKategoriat() {
-        if(this.kategoriat == null) {
-            this.kategoriat = new ArrayList<>(); 
+        if (this.kategoriat == null) {
+            this.kategoriat = new ArrayList<>();
         }
         return kategoriat;
     }
@@ -30,18 +37,44 @@ public class Uutinen extends AbstractPersistable<Long> {
     public void setKategoriat(List<Kategoria> kategoriat) {
         this.kategoriat = kategoriat;
     }
-    
+
     public void addKategoria(Kategoria kategoria) {
-        if(this.kategoriat == null) {
-            this.kategoriat = new ArrayList<>(); 
+        if (this.kategoriat == null) {
+            this.kategoriat = new ArrayList<>();
         }
         this.kategoriat.add(kategoria);
     }
-    
-    public Uutinen() {
-        this.date = new Date();
+
+    public List<Kirjoittaja> getKirjoittajat() {
+        if (this.kirjoittajat == null) {
+            this.kirjoittajat = new ArrayList<>();
+        }
+        return kirjoittajat;
+    }
+
+    public void setKirjoittajat(List<Kirjoittaja> kirjoittajat) {
+        this.kirjoittajat = kirjoittajat;
+    }
+
+    public void addKirjoittaja(Kirjoittaja kirjoittaja) {
+        if (this.kirjoittajat == null) {
+            this.kirjoittajat = new ArrayList<>();
+        }
+        this.kirjoittajat.add(kirjoittaja);
+    }
+
+    public int getLuettu() {
+        return luettu;
+    }
+
+    public void setLuettu(int luettu) {
+        this.luettu = luettu;
     }
     
+    public void kasvataLuettu() {
+        luettu++;
+    }
+
     public Date getDate() {
         return date;
     }
@@ -49,7 +82,7 @@ public class Uutinen extends AbstractPersistable<Long> {
     public Kuva getKuva() {
         return kuva;
     }
-    
+
     public void setKuva(Kuva kuva) {
         this.kuva = kuva;
     }
@@ -77,5 +110,5 @@ public class Uutinen extends AbstractPersistable<Long> {
     public void setLeipateksti(String leipateksti) {
         this.leipateksti = leipateksti;
     }
-    
+
 }

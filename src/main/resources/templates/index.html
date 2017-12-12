@@ -1,36 +1,83 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     <head>
+        <style>
+            body {
+                background-color: #C5EEE8;
+            }
+            header {
+                background-color: #61D0BE;
+                text-align: center;
+                padding: 20px;
+            }
+            .column {
+                float: left;
+                width: 50%;
+            }
+            table {
+                background-color: #87EADB;
+            }
+            img {
+                position: relative;
+                float: middle;
+                width:  500px;
+                height: 250px;
+                background-position: 50% 50%;
+                background-repeat:   no-repeat;
+                background-size:     cover;
+            }
+
+
+
+        </style>
         <title>Hyviä uutisia</title>
         <meta charset="UTF-8" />
     </head>
     <body>
-
-        <h2>Tästä tulee niin vitun hieno uutissivu!</h2>
-
-
-        <table style="width:100%">
+        <header>
+            <h2>Tosi hieno uutissivu!</h2></header>
+        <table style="width:100%">  
             <tr>
                 <td><a th:href="@{/}">Home</a></td>
                 <td><a th:href="@{/all}">Kaikki uutiset</a> </td>
                 <td><a th:href="@{/news}">Lisää uutinen</a></td><br/>
-                
             </tr>
         </table>
-
+        <table style="width:100%">
+            <tr>
+                <td><a th:href="@{/news/kategoria/kotimaa}">Kotimaa</a></td>
+                <td><a th:href="@{/news/kategoria/ulkomaat}">Ulkomaat</a> </td>
+                <td><a th:href="@{/news/kategoria/tiede}">Tiede</a></td><br/>
+                <td><a th:href="@{/news/kategoria/urheilu}">Urheilu</a></td>
+                <td><a th:href="@{/news/kategoria/kulttuuri}">Kulttuuri</a> </td>
+                <td><a th:href="@{/news/kategoria/muu}">Muu</a></td><br/>
+            </tr>
+        </table>
+        <hr/>
         <form th:action="@{/news}" method="GET">
-
-            <div th:each="u : ${uutine}">
-                <h2><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h2> 
-                <div th:if="${u.kuva != null}">
-                    <img th:src="@{/news/picture/{id}(id=${u.kuva.id})}" alt = 'no picture'/>
+            <div class="row">
+                <div class="column" align="center">
+                    <h2>Uusimmat uutiset</h2>
+                    <div th:each="u : ${uutine}">
+                        <h2><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h2> <br/>
+                        <div th:if="${u.kuva != null}">
+                            <img th:src="@{/news/picture/{id}(id=${u.kuva.id})}" alt = 'no picture'/>
+                        </div>
+                        <h3><span th:text="${u.ingressi}">ingressi</span></h3><br/>
+                    </div>
                 </div>
-                <h3><a th:text="${u.ingressi}">ingressi</a></h3><br/>
+                <div class="column" align="center">
+                    <h2>Luetuimmat</h2>
+                    <div th:each="u : ${utise}">
+                        <h3><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h3> 
+                        <a th:text="${u.date}">date</a><br/>
+                    </div>
+                </div>
             </div>
-
         </form>
-
     </body>
-
-
 </html>

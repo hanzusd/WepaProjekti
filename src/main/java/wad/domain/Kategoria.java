@@ -15,6 +15,9 @@ public class Kategoria extends AbstractPersistable<Long> {
     @ManyToMany(mappedBy = "kategoriat")
     private List<Uutinen> uutiset;
     
+    public Kategoria() {
+    }
+    
     public Kategoria(String n) {
         this.nimi = n;
     }

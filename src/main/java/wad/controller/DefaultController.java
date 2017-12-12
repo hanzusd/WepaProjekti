@@ -20,7 +20,9 @@ public class DefaultController {
     @GetMapping("/")
     public String list(Model model) {
         PageRequest pageable = PageRequest.of(0, 5, Sort.Direction.DESC, "date");
+        PageRequest pg = PageRequest.of(0,5, Sort.Direction.DESC, "luettu");
         model.addAttribute("uutine", uutisRepository.findAll(pageable));
+        model.addAttribute("utise", uutisRepository.findAll(pg));
         return "index";
     }
     

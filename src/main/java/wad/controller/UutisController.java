@@ -38,15 +38,10 @@ public class UutisController {
         uutisRepository.flush();
         return "newspiece";
     }
-    
+
     @GetMapping("news/kategoria/{kategoria}")
     public String uutisetKategorioittain(Model model, @PathVariable("kategoria") String kategoriaNimi) {
-        if(!(kategoriaRepository.findByNimi(kategoriaNimi).getUutiset() == null)) {
         model.addAttribute("uutine", kategoriaRepository.findByNimi(kategoriaNimi).getUutiset());
-        } else {
-            model.addAttribute("viesti", "Ei kategorian uutisia");
-            return "redirect:/";
-        }
         return "index";
     }
 
@@ -77,7 +72,7 @@ public class UutisController {
             kirjoittajaRepository.flush();
         }
         uutisRepository.save(uutinen);
-        
+
         return "redirect:/";
     }
 }

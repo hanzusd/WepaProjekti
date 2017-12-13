@@ -69,7 +69,6 @@
                 <span th:text="${news.date}">date</span>
             </div>
             <div class="column" align="center">
-                <h2>Luetuimmat</h2>
                 <div th:each="u : ${utise}">
                     <h3><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h3> 
                     <a th:text="${u.date}">date</a><br/>

@@ -2,6 +2,7 @@ wad\controller\DefaultController.class
 wad\repository\KirjoittajaRepository.class
 wad\domain\Kuva.class
 wad\domain\Uutinen.class
+wad\ProductionProfile.class
 wad\repository\KategoriaRepository.class
 wad\repository\KuvaRepository.class
 wad\domain\Kategoria.class

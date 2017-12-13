@@ -65,7 +65,7 @@
                     <div th:each="u : ${uutine}">
                         <h2><a th:href="@{/news/{uid}(uid=${u.id})}"><span th:text="${u.otsikko}">uutisotsikko</span></a></h2> <br/>
                         <div th:if="${u.kuva != null}">
-                            <img th:src="@{/news/picture/{id}(id=${u.kuva.id})}" alt = 'no picture'/>
+                            <img th:src="@{/news/picture/{id}(id=${u.kuva.id})}" alt = 'no picture'/><br/>
                         </div>
                         <h3><span th:text="${u.ingressi}">ingressi</span></h3><br/>
                     </div>
